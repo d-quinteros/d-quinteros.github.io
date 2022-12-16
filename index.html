@@ -82,6 +82,8 @@ Overall, our project combines both sound and visual elements to create an intera
 								<p>\begin{equation} D = \frac{ln\frac{12 - \alpha (6)}{\alpha(6)}}{ln(\frac{12-\alpha (6)}{\alpha(6)})^2},\end{equation} </p>
 								<p>which demonstrates why the value of $\alpha$ has no effect on the duty cycle when $V_{ref} = \frac{1}{2}V_{dd}$. </p>
 								<p>The next calculations were made for the values of the components that changed the period of the oscillator. We used the $0.1\mu F$ capacitor in the low-pass filter because this was a reasonable value we had access to. Since the time constant ($\tau$) of the filter is $RC$, we needed a larger resistor value to compensate for the low capacitor value. This is because when the $\tau$ value is low you need a lower $\alpha$, but there are limits to the size of $\alpha$.</p>	
+								<img src="images/alpha_figure.png" width="480" height="" alt="" />
+									<figcaption>Figure 2: This graph demonstrates at $V_{ref} = \frac{1}{2}V_{dd}$ lowering the $\alpha$ value lowers the $\tau$ needed for the same period. This means at the higher $\tau$ values, you are allowed to use larger $\alpha$ values, but as the $\tau$ gets smaller you need a lower $\alpha$ value.</figcaption>
 							</article>
 
 						<!-- Mechanical -->
