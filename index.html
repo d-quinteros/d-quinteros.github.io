@@ -201,7 +201,7 @@ Overall, our project combines both sound and visual elements to create an intera
 							<article id="vco">
 								<h3 class="major">Voltage Controlled Oscillator</h3>
 								<p>The new electrical system we implemented to replace the hysteretic oscillator was a voltage controlled oscillator. </p>
-								<img src="images/VCO.png" width="480" height="" alt="" />
+								<span class="image main"><img src="images/VCO.png" width="480" height="" alt="" /></span>
 								<p>The VCO is built on three main components: the controller, the exponential converter, and the oscillator.</p>
 								<p>The controller is a resistor string, which acts as different voltage dividers for each note. We used 100Ω resistors and since the input voltage is 6V we had the total resistance at 3K, thus, each note would drop the voltage but .2V. This made the calculations easier when we needed to convert them for the exponential converter. We calculated that we needed each note to change but .0015V for the exponential converter to play them sequentially. We used a summing op amp configuration to convert the .2V drops to .0015V drops. We then used a voltage reference with the summing op amp to shift the notes up in the full range to play the 4th and 5th octaves. In order to get this reference we used a potentiometer isolated with a buffer. This also allowed us to tune the piano and shift into different octaves.</p>
 								<p>The controller voltages then lead to the exponential converter. The most common way of creating an exponential converter is to use a bipolar junction transistor (BJT). We used two NPN transistors to make this computation. The equation for the current output is,</p>
@@ -215,7 +215,7 @@ Overall, our project combines both sound and visual elements to create an intera
 									<li>T= absolute temperature in degrees Kelvin.</li>
 								</ul>
 								<p>The results of the circuit were:</p>
-								<img src="images/Exponential.png" width="480" height="" alt="" />
+								<span class="image main"><img src="images/Exponential.png" width="480" height="" alt="" /></span>
 								<p>We can clearly see that it produces an exponential current output. This is because frequencies in pianos are logarithmic.</p>
 							</article>
 						
