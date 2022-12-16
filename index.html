@@ -39,6 +39,12 @@
 		  padding: 2px;
 		  text-align: center;
 		}
+			
+		img {
+		  display: block;
+		  margin-left: auto;
+		  margin-right: auto;
+		}
 		</style>
 		
 	</head>
@@ -102,16 +108,10 @@ Overall, our project combines both sound and visual elements to create an intera
 								
 								<h3 class="major">Mathematics for the Hysteretic Circuit Design</h3>
 								
-								<div>
 								<figure>
-									<img src="images/Hysteretic_oscillator.png" width="480" height="" alt="" />
+									<img src="images/Hysteretic_oscillator.png" width="480" height="" alt="" style="width:50%;"/>
 									<figcaption>Hysteretic oscillator schematic</figcaption>
 								</figure>
-								</div>
-								
-								div {
-								      text-align: center;
-								    }
 								
 								<p>Our goal for the hysteretic oscillator was to tune it to 1 Hz and then put potentiometers in parallel attached to switches as a substitute to the resistor in the RC values. We knew there was 12-V coming from the power connection. This was all we needed to calculate the component values to produce an oscillating square wave with the desired frequencies. We first wanted a duty cycle of .5 or 50% for the hysteretic oscillator because it would make the rest of the calculations and simulations less complicated. The duty cycle of the oscillation depends on the difference between the reference voltage and power voltage to the op-amp.</p>
 								<img src="images/duty_figure.png" width="480" height="" alt="" />
