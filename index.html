@@ -339,7 +339,13 @@ Overall, our project combines both sound and visual elements to create an intera
 						<!-- Servo Movement -->
 							<article id="servos">
 								<h2 class="major">Servo Movement</h2>
-								
+								<p>Using servos for our project, we decided to expand upon the simple “Sweep” code provided by the Arduino Examples. The example code sweeps the servo back and forth across 180 degrees, with the “speed” being determined by an increment value, which represents the amount, in degrees, the servo can move at one time. The first step was to get all of the servos moving, so we expanded the starting example code to include 12 servo motors.</p>
+								<p>Next, we needed the servos to vary in speed depending on the frequency being read from the analog synth. The “speed” in this case is determined by an increment value, as stated previously. The larger the increment value, the faster the motors. We decided to set the increment value equal to the frequency / 10. The scaling of the frequency provides us with a reasonable increment value to ensure the servo isn’t exceeding its speed limit and skipping steps, resulting in a lower range of movement. Therefore, when the frequency is changed, the speed of the servos will change accordingly.</p>
+								<p>Lastly, to get the ripple effect, the sweep motion of the servos needed to be offset to each other. To accomplish this, we created a function that will determine the position of any servo. We decided to have an off-set of 15 degrees, so that when the first servo reaches 180 degrees, the last servo will begin moving, resulting in a looped pattern. Using this logic, we created the equation below:</p>
+								<p>servo_position = servo_0_pos - angle_offset * servo_number</p>
+								<p>This equation can determine the position of any of the servos by knowing where in the order of movement the servo is: servo_number. If servo_position is less than 0, we made it so that it will keep the servo stationary at 0. This equation is only functional when sweeping from 0 to 180 degrees. Going from 180 to 0 degrees requires the equation below:</p>
+								<p>servo_position = servo_position = servo_0_pos + angle_offset * servo_number</p>
+								<p>The above equation follows similar logic to the previous example. Implementing these equations into a function that takes the position of servo 0 and the servo number of the servo being moved as parameters will provide a function that can determine the position of any servo in the display.</p>
 							</article>
 						
 						<!-- Budget -->
