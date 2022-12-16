@@ -122,7 +122,7 @@ Overall, our project combines both sound and visual elements to create an intera
 								
 								<figure>
 									<img src="images/duty_figure.png" width="480" height="" alt="" style="width:50%;"/>
-									<figcaption>Figure 2: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations. Each line represents a different $\alpha$ value where, $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$. At $V_{ref} = \frac{1}{2}V_{dd}$, the duty cycle is at 50\%. Also at this point, the value of $\alpha$ does not have any effect on the duty cycle.</figcaption>
+									<figcaption><cap_text>Figure 2: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations. Each line represents a different $\alpha$ value where, $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$. At $V_{ref} = \frac{1}{2}V_{dd}$, the duty cycle is at 50\%. Also at this point, the value of $\alpha$ does not have any effect on the duty cycle.</cap_text></figcaption>
 								</figure>
 
 								<p>The equation for the duty cycle for a hysteretic oscillator is,</p>
@@ -134,7 +134,7 @@ Overall, our project combines both sound and visual elements to create an intera
 								
 								<figure>
 									<img src="images/alpha_figure.png" width="480" height="" alt="" style="width:50%;"/>
-									<figcaption>Figure 3: This graph demonstrates at $V_{ref} = \frac{1}{2}V_{dd}$ lowering the $\alpha$ value lowers the $\tau$ needed for the same period. This means at the higher $\tau$ values, you are allowed to use larger $\alpha$ values, but as the $\tau$ gets smaller you need a lower $\alpha$ value.</figcaption>
+									<figcaption><cap_text>Figure 3: This graph demonstrates at $V_{ref} = \frac{1}{2}V_{dd}$ lowering the $\alpha$ value lowers the $\tau$ needed for the same period. This means at the higher $\tau$ values, you are allowed to use larger $\alpha$ values, but as the $\tau$ gets smaller you need a lower $\alpha$ value.</cap_text></figcaption>
 								</figure>
 								
 								<p>In order to get those smaller $\alpha$ values you need bigger resistor values and it appeared like the needed resistor values were much larger than the ones we had quick access to, so based on that we knew we wanted the $\tau$ value to be as big as possible. With the $RC$ values for $\tau$ figured out, we can solve for $\alpha$ using the hysteretic oscillator period equation,</p>
@@ -152,7 +152,7 @@ Overall, our project combines both sound and visual elements to create an intera
 								
 								<figure>
 									<img src="images/Single_period.png" width="480" height="" alt="" style="width:50%;"/>
-									<figcaption>Figure 4: This is a single waveform created from the hysteretic oscillator. This particular waveform was the ideal simulation with no error accounted for except from the calculations made for the components. It is key to note the period is nearly 1 second and the characteristics of the waveform are similar to those expected. The voltage goes between the rails of the op-amp, which are at 3.3-V and 0-V. The duty cycle is also clearly seen as .5 or 50\%</figcaption>
+									<figcaption><cap_text>Figure 4: This is a single waveform created from the hysteretic oscillator. This particular waveform was the ideal simulation with no error accounted for except from the calculations made for the components. It is key to note the period is nearly 1 second and the characteristics of the waveform are similar to those expected. The voltage goes between the rails of the op-amp, which are at 3.3-V and 0-V. The duty cycle is also clearly seen as .5 or 50\%</cap_text></figcaption>
 								</figure>
 
 							</article>
