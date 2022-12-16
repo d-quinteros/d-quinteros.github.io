@@ -114,16 +114,24 @@ Overall, our project combines both sound and visual elements to create an intera
 								</figure>
 								
 								<p>Our goal for the hysteretic oscillator was to tune it to 1 Hz and then put potentiometers in parallel attached to switches as a substitute to the resistor in the RC values. We knew there was 12-V coming from the power connection. This was all we needed to calculate the component values to produce an oscillating square wave with the desired frequencies. We first wanted a duty cycle of .5 or 50% for the hysteretic oscillator because it would make the rest of the calculations and simulations less complicated. The duty cycle of the oscillation depends on the difference between the reference voltage and power voltage to the op-amp.</p>
-								<img src="images/duty_figure.png" width="480" height="" alt="" />
-    									<figcaption>Figure 1: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations. Each line represents a different $\alpha$ value where, $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$. At $V_{ref} = \frac{1}{2}V_{dd}$, the duty cycle is at 50\%. Also at this point, the value of $\alpha$ does not have any effect on the duty cycle.</figcaption>
+								
+								<figure>
+									<img src="images/duty_figure.png" width="480" height="" alt="" style="width:50%;"/>
+									<figcaption>Figure 1: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations. Each line represents a different $\alpha$ value where, $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$. At $V_{ref} = \frac{1}{2}V_{dd}$, the duty cycle is at 50\%. Also at this point, the value of $\alpha$ does not have any effect on the duty cycle.</figcaption>
+								</figure>
+
 								<p>The equation for the duty cycle for a hysteretic oscillator is,</p>
 								<p>\begin{equation}D = \frac{ln\frac{V_{dd} - \alpha V_{ref}}{\alpha(V_{dd}-V_{ref})}}{ln\frac{V_{dd}-\alpha(V_{dd}-V_{ref})}{\alpha(V_{dd}-V_{ref})}\frac{V_{dd}-\alpha V{ref}}{\alpha(V_{ref})}}, </p>
 								<p>which we used to check the duty cycle output of our values. After plugging our values into the equation it became,</p>	
 								<p>\begin{equation} D = \frac{ln\frac{12 - \alpha (6)}{\alpha(6)}}{ln(\frac{12-\alpha (6)}{\alpha(6)})^2},\end{equation} </p>
 								<p>which demonstrates why the value of $\alpha$ has no effect on the duty cycle when $V_{ref} = \frac{1}{2}V_{dd}$. </p>
 								<p>The next calculations were made for the values of the components that changed the period of the oscillator. We used the $0.1\mu F$ capacitor in the low-pass filter because this was a reasonable value we had access to. Since the time constant ($\tau$) of the filter is $RC$, we needed a larger resistor value to compensate for the low capacitor value. This is because when the $\tau$ value is low you need a lower $\alpha$, but there are limits to the size of $\alpha$.</p>	
-								<img src="images/alpha_figure.png" width="480" height="" alt="" />
+								
+								<figure>
+									<img src="images/alpha_figure.png" width="480" height="" alt="" style="width:50%;"/>
 									<figcaption>Figure 2: This graph demonstrates at $V_{ref} = \frac{1}{2}V_{dd}$ lowering the $\alpha$ value lowers the $\tau$ needed for the same period. This means at the higher $\tau$ values, you are allowed to use larger $\alpha$ values, but as the $\tau$ gets smaller you need a lower $\alpha$ value.</figcaption>
+								</figure>
+								
 								<p>In order to get those smaller $\alpha$ values you need bigger resistor values and it appeared like the needed resistor values were much larger than the ones we had quick access to, so based on that we knew we wanted the $\tau$ value to be as big as possible. With the $RC$ values for $\tau$ figured out, we can solve for $\alpha$ using the hysteretic oscillator period equation,</p>
 								<p>\begin{equation}T = \tau ln\frac{V_{dd}-\alpha(V_{dd}-V_{ref})}{\alpha(V_{dd}-V_{ref})}\frac{V_{dd}-\alpha V_{ref}}{\alpha V_{ref}}.\end{equation}</p>
 								<p>The equation is then,</p>
@@ -136,8 +144,12 @@ Overall, our project combines both sound and visual elements to create an intera
 								<p>The lowest error percentage we calculated was .8\% with $R_{1}$ being $80.6\Omega$ and $R_{2}$ being $14.3\Omega$. We did these calculations with the resistors we had access to. This error works for the equivalent ratio with the larger resistor values, such as, $80.6k\Omega$ and $14.3k\Omega$ There were a few other low percentages, but no other combination of resistor values produced an error percent close to this. </p>
 								<p>The next values we calculated were the resistors for the voltage divider to make the input of the hysteretic oscillator exactly $\frac{1}{2}V_{dd}$. We wanted the resistor values to be as low as possible, but since the resistors are rated for lower power ratings we needed resistors large enough to drop the power to less than their power ratings. We used $1K\Omega$ resistors to drop the current. </p>
 								<p>The calculations we made for all the components would create the following waveform,</p>
-								<img src="images/Single_period.png" width="480" height="" alt="" />
+								
+								<figure>
+									<img src="images/Single_period.png" width="480" height="" alt="" style="width:50%;"/>
 									<figcaption>Figure 3: This is a single waveform created from the hysteretic oscillator. This particular waveform was the ideal simulation with no error accounted for except from the calculations made for the components. It is key to note the period is nearly 1 second and the characteristics of the waveform are similar to those expected. The voltage goes between the rails of the op-amp, which are at 3.3-V and 0-V. The duty cycle is also clearly seen as .5 or 50\%</figcaption>
+								</figure>
+
 							</article>
 						
 						<!-- Electrical Sprint 1 -->
