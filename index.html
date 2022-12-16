@@ -118,6 +118,7 @@ Overall, our project combines both sound and visual elements to create an intera
   											<tr>
    												<td><a href="#hysteretic">Hysteretic Circuit Design</a></td>
 												<td><a href="#vco">Voltage Controlled Oscillator</a></td>
+												<td><a href="#displaycircuit"Kinematic Display Electrical System</a></td>
  											</tr>
 										</table>
 									</nav>
@@ -216,7 +217,18 @@ Overall, our project combines both sound and visual elements to create an intera
 								</ul>
 								<p>The results of the circuit were:</p>
 								<span class="image main"><img src="images/Exponential.png" width="480" height="" alt="" /></span>
-								<p>We can clearly see that it produces an exponential current output. This is because frequencies in pianos are logarithmic.</p>
+								<p>We can clearly see that it produces an exponential current output. This is because frequencies in pianos are logarithmic. The exponential converter uses an op amp connecting the current reference to the emitters of the two NPN transistors. This op amp acts as a current source to hold the current thru the transistor fixed. We used a value of 600K for the reference current input, so the current would be .1uA. We used two NPN transistors to create the output current because coupling them in this configuration gets rid of the temperature dependence of Is.</p>
+								<p>After the exponential converter we had the voltage controlled oscillator. The design of the VCO was a current to voltage converter, then an integrator, with a schmitt trigger connecting to a NPN transistor with its emitter connected to -6V, which will drain the capacitor.</p>
+								<img src="images/Waves.jpg" width="480" height="" alt=""/>
+								<p>The output of our designed VCO was a sawtooth wave, but we were having the top part of the signal being cut off. We then added a resistor connecting from the schmitt trigger to the NPN base. We got the new VCO to work with a fine tune potentiometer for the scale and a potentiometer to choose the octave. The final output of this circuit is below.</p>
+							</article>
+						
+						<!-- Electrical System for the Kinematic Display -->
+							<article id="displaycircuit">
+								<h2 class="major">Electrical System for the Kinematic Display</h2>
+								<p>We needed to connect the kinematic display to a powerful enough power supply to move all of the rings. The final circuit is below.</p>
+								<img src="images/Kinematic_Display_Circuit.png" width="480" height="" alt=""/>
+								<p>We connected each servo PWM signal to the digital pins of the arduino and powered them on their own power supply. We needed a lot of current for the servos, so we used a computer battery, which supplies 5V for the servos.</p>
 							</article>
 						
 						<!-- Mechanical -->
