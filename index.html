@@ -199,11 +199,24 @@ Overall, our project combines both sound and visual elements to create an intera
 						
 						<!-- VCO -->
 							<article id="vco">
-								<h2 class="major">Sprint 1</h2>
-								<p>During the first sprint the electrical team was able to make a working hysteretic oscillator for a full scale. We were able to tune each note to make the scale and used an audio headphone jack connected to old wired apple headphones. </p>
-								<img src="images/Electrical_Sprint1.jpg" width="480" height="" alt="" />
-								<p>Under each key on the mechanical keyboard are tactile switches, which pick the resistor value in the RC value in the circuit.</p>
-								<p><a href="https://youtube.com/shorts/jmTknJDjco0?feature=share">Sprint 1 Video</a></p>
+								<h3 class="major">Voltage Controlled Oscillator</h3>
+								<p>The new electrical system we implemented to replace the hysteretic oscillator was a voltage controlled oscillator. </p>
+								<img src="images/VCO.png" width="480" height="" alt="" />
+								<p>The VCO is built on three main components: the controller, the exponential converter, and the oscillator.</p>
+								<p>The controller is a resistor string, which acts as different voltage dividers for each note. We used 100Ω resistors and since the input voltage is 6V we had the total resistance at 3K, thus, each note would drop the voltage but .2V. This made the calculations easier when we needed to convert them for the exponential converter. We calculated that we needed each note to change but .0015V for the exponential converter to play them sequentially. We used a summing op amp configuration to convert the .2V drops to .0015V drops. We then used a voltage reference with the summing op amp to shift the notes up in the full range to play the 4th and 5th octaves. In order to get this reference we used a potentiometer isolated with a buffer. This also allowed us to tune the piano and shift into different octaves.</p>
+								<p>The controller voltages then lead to the exponential converter. The most common way of creating an exponential converter is to use a bipolar junction transistor (BJT). We used two NPN transistors to make this computation. The equation for the current output is,</p>
+								<p>I_{c} = I_{s}\cdot (e^{ \frac{V_{be}}{V_{T}}}-1),</p>
+								<p>where</p>
+								<ul>
+									<li>Ic = the transistors collector current</li>
+									<li>Vbe=Vbe= the transistors base-emitter voltage, i.e. the voltage difference between the base and the emitter</li>
+									<li>q=1.6⋅10^−19 Coulombs (electron charge)</li>
+									<li>k=1.38⋅10^−23 Joules/Kelvin (Boltzmann's constant)</li>
+									<li>T= absolute temperature in degrees Kelvin.</li>
+								</ul>
+								<p>The results of the circuit were:</p>
+								<img src="images/Exponential.png" width="480" height="" alt="" />
+								<p>We can clearly see that it produces an exponential current output. This is because frequencies in pianos are logarithmic.</p>
 							</article>
 						
 						<!-- Mechanical -->
