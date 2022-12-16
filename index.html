@@ -319,7 +319,7 @@ Overall, our project combines both sound and visual elements to create an intera
 								
 								<span class="image main"><img src="images/wave_reading.png" width="960" height="" alt="" /></span>
 								<p>To calculate the frequency, we have to determine the period of the generated wave. Our code is constantly reading the voltage input from the keyboard, through an analog port, and updating the “current voltage” variable, which oscillates between 0 and 800.</p>
-								<p>To find the period, we tracked the amount of time, in microseconds, that it took for the voltage reading to surpass the threshold value. The actual threshold value does not matter, as long as it is between the between the minimum and maximum values possible, which in this case are 0 and 800. For our project, we used a threshold value of 200.</p>
+								<p>To find the period, we tracked the amount of time, in microseconds, that it took for the voltage reading to surpass the threshold value. The actual threshold value does not matter, as long as it is between the minimum and maximum values possible, which in this case are 0 and 800, respectively. For our project, we used a threshold value of 200.</p>
 								<p>After determining the period, in microseconds, we converted it into seconds by multiplying the value by 1,000,000. Lastly, we used the equation f = 1 / T, in which “f” is the frequency and “T” is the period, to calculate the frequency.</p>
 							</article>
 						
