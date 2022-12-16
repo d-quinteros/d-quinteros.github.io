@@ -84,6 +84,18 @@ Overall, our project combines both sound and visual elements to create an intera
 								<p>The next calculations were made for the values of the components that changed the period of the oscillator. We used the $0.1\mu F$ capacitor in the low-pass filter because this was a reasonable value we had access to. Since the time constant ($\tau$) of the filter is $RC$, we needed a larger resistor value to compensate for the low capacitor value. This is because when the $\tau$ value is low you need a lower $\alpha$, but there are limits to the size of $\alpha$.</p>	
 								<img src="images/alpha_figure.png" width="480" height="" alt="" />
 									<figcaption>Figure 2: This graph demonstrates at $V_{ref} = \frac{1}{2}V_{dd}$ lowering the $\alpha$ value lowers the $\tau$ needed for the same period. This means at the higher $\tau$ values, you are allowed to use larger $\alpha$ values, but as the $\tau$ gets smaller you need a lower $\alpha$ value.</figcaption>
+								<p>In order to get those smaller $\alpha$ values you need bigger resistor values and it appeared like the needed resistor values were much larger than the ones we had quick access to, so based on that we knew we wanted the $\tau$ value to be as big as possible. With the $RC$ values for $\tau$ figured out, we can solve for $\alpha$ using the hysteretic oscillator period equation,</p>
+								<p>\begin{equation}T = \tau ln\frac{V_{dd}-\alpha(V_{dd}-V_{ref})}{\alpha(V_{dd}-V_{ref})}\frac{V_{dd}-\alpha V_{ref}}{\alpha V_{ref}}.\end{equation}</p>
+								<p>The equation is then,</p>
+								<p>\begin{equation}1 = .0000001*2000000* ln\frac{12-\alpha(6)}{\alpha(6)}\frac{12-\alpha (6)}{\alpha (6)},\end{equation}</p>
+								<p>when the known values are inserted into variables. we used graphing tools to find the value of $\alpha$ for the resistor values we would use in $\tau$,</p>
+								<p>We rearranged $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$ to isolate $R_{1}$ on one side of the equation. Thus, the equation became,<p>
+								<p>\begin{equation}R_{1} = \frac{R_{2} - \alpha R_{2}}{\alpha}.\end{equation}</p>
+								<p>We used Excel to compute the $R_{1}$ values by plugging every resistor value available to use for this project into $R_{2}$. We also used Excel to visually compare the outputs of $R_{1}$ values to real resistor values that were provided in this project. We had a column that would find the nearest real resistor value from the calculated $R_{1}$ values and calculated the error $\%$ between them. The equation for the error was,</p>
+								<p>\begin{equation}Error \% = \frac{R1_{Real}-R1_{Calculated}}{R1_{Real}} * 100\end{equation}</p>
+								<p>The lowest error percentage we calculated was .8\% with $R_{1}$ being $80.6\Omega$ and $R_{2}$ being $14.3\Omega$. We did these calculations with the resistors we had access to. This error works for the equivalent ratio with the larger resistor values, such as, $80.6k\Omega$ and $14.3k\Omega$ There were a few other low percentages, but no other combination of resistor values produced an error percent close to this. </p>
+								<p>The next values we calculated were the resistors for the voltage divider to make the input of the hysteretic oscillator exactly $\frac{1}{2}V_{dd}$. We wanted the resistor values to be as low as possible, but since the resistors are rated for lower power ratings we needed resistors large enough to drop the power to less than their power ratings. We used $1K\Omega$ resistors to drop the current. </p>
+								<p>The calculations we made for all the components would create the following waveform,</p>
 							</article>
 
 						<!-- Mechanical -->
