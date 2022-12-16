@@ -75,8 +75,13 @@ Overall, our project combines both sound and visual elements to create an intera
 								<h3 class="major">Mathematics for the Hysteretic Circuit Design</h3>
 								<p>Our goal for the hysteretic oscillator was to tune it to 1 Hz and then put potentiometers in parallel attached to switches as a substitute to the resistor in the RC values. We knew there was 12-V coming from the power connection. This was all we needed to calculate the component values to produce an oscillating square wave with the desired frequencies. We first wanted a duty cycle of .5 or 50% for the hysteretic oscillator because it would make the rest of the calculations and simulations less complicated. The duty cycle of the oscillation depends on the difference between the reference voltage and power voltage to the op-amp.</p>
 								<img src="images/duty_figure.png" width="480" height="" alt="" />
-    									<figcaption>Figure 1: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations.  Each line represents a different <math>&#945</math> value where, <mathxmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mi>R</mi><mi>2</mi></mfrac><mo>=</mo><mfrac><mi>R</mi><mi>2</mi></mfrac><mo>/</mo><mrow><mi>R</mi><mi>1</mi><mo>+</mo><mi>R</mi><mi>2</mi></mrow></math>
-									</figcaption>
+    									<figcaption>Figure 1: Illustrates the relationship between the reference voltage and the duty cycle of the oscillations. Each line represents a different $\alpha$ value where, $\alpha  = \frac{R_{2}}{(R_{1} + R_{2})}$. At $V_{ref} = \frac{1}{2}V_{dd}$, the duty cycle is at 50\%. Also at this point, the value of $\alpha$ does not have any effect on the duty cycle.</figcaption>
+								<p>The equation for the duty cycle for a hysteretic oscillator is,</p>
+								<p>\begin{equation}D = \frac{ln\frac{V_{dd} - \alpha V_{ref}}{\alpha(V_{dd}-V_{ref})}}{ln\frac{V_{dd}-\alpha(V_{dd}-V_{ref})}{\alpha(V_{dd}-V_{ref})}\frac{V_{dd}-\alpha V{ref}}{\alpha(V_{ref})}}, </p>
+								<p>which we used to check the duty cycle output of our values. After plugging our values into the equation it became,</p>	
+								<p>\begin{equation} D = \frac{ln\frac{12 - \alpha (6)}{\alpha(6)}}{ln(\frac{12-\alpha (6)}{\alpha(6)})^2},\end{equation} </p>
+								<p>which demonstrates why the value of $\alpha$ has no effect on the duty cycle when $V_{ref} = \frac{1}{2}V_{dd}$. </p>
+								<p>The next calculations were made for the values of the components that changed the period of the oscillator. We used the $0.1\mu F$ capacitor in the low-pass filter because this was a reasonable value we had access to. Since the time constant ($\tau$) of the filter is $RC$, we needed a larger resistor value to compensate for the low capacitor value. This is because when the $\tau$ value is low you need a lower $\alpha$, but there are limits to the size of $\alpha$.</p>	
 							</article>
 
 						<!-- Mechanical -->
